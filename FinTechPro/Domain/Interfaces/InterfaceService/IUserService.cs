@@ -10,7 +10,7 @@ namespace Domain.Interfaces.IUserService
 {
     public interface IUserService
     {
-        Task InsertUser(Users User);
+        Task InsertUser(Users user);
 
     }
 }

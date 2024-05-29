@@ -18,5 +18,7 @@ namespace Domain.Interfaces.IExpense
         /// <param name="emailUser"></param>
         /// <returns></returns>
         Task<IList<Expenses>> ListUnpaidExpensesPrevious(string emailUser);
+
+        Task<Expenses> GetExpensesByID(int id);
     }
 }

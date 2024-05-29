@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces.ICategoryService;
+﻿using Domain.Interfaces.ICategory;
+using Domain.Interfaces.ICategoryService;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,16 @@ namespace Domain.Services.CategoryService
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ICategoryService iCategoryService;
-        public CategoryService(ICategoryService iCategoryService) {
-            this.iCategoryService = iCategoryService;
+        private readonly ICategory iCategory;
+        public CategoryService(ICategory iCategory) {
+            this.iCategory = iCategory;
         }
         public async Task InsertCategory(Categories category)
         {
             var isValid = category.ValidatePropertyString(category.Name, "Name");
             if (isValid)
             {
-                await iCategoryService.InsertCategory(category);
+                await iCategory.Insert(category);
             }
         }
 
@@ -28,7 +29,7 @@ namespace Domain.Services.CategoryService
             var isValid = category.ValidatePropertyString(category.Name, "Name");
             if (isValid)
             {
-                await iCategoryService.UpdateCategory(category);
+                await iCategory.Update(category);
             }
         }
     }

@@ -31,7 +31,7 @@ namespace Infrastructure.Repository.Generics
             }
         }
 
-            public async Task<IList<Expenses>> ListUnpaidExpensesPrevious(string emailUser)
+        public async Task<IList<Expenses>> ListUnpaidExpensesPrevious(string emailUser)
         {
             using (var bd = new ContextBase(optionsBuilder))
             {
@@ -42,6 +42,14 @@ namespace Infrastructure.Repository.Generics
                      join expense in bd.Expense on category.Id equals expense.IdCategory
                      where user.Email.Equals(emailUser) && (expense.Month < DateTime.Now.Month || expense.Year < DateTime.Now.Year) && !expense.IsPaid
                      select expense).AsNoTracking().ToListAsync();
+            }
+        }
+        public async Task<Expenses> GetExpensesByID(int id)
+        {
+            using (var bd = new ContextBase(optionsBuilder))
+            {
+                return await bd.Expense.Where(expense => expense.Id == id)
+                   .AsNoTracking().FirstOrDefaultAsync();
             }
         }
     }

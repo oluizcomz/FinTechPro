@@ -41,14 +41,13 @@ namespace Infrastructure.Persistence
             }
 
 
-            public string ObterStringConexao()
-            {
-                return "Data Source=NBQSP-FC693;Initial Catalog=FINANCEIRO_2023;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+        public string ObterStringConexao()
+        {
+            //return "Data Source=NBQSP-FC693;Initial Catalog=FINANCEIRO_2023;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
 
-                //return "Data Source=NBQSP-FC693;Initial Catalog=FINANCEIRO_2023;Integrated Security=True"; // Evitar
-            }
+            return "Data Source=DESKTOP-D47FKN4\\SQLEXPRESS;Initial Catalog=FINTECHPRO;Integrated Security=True;TrustServerCertificate=True";
 
-
+        }
         
     }
 }

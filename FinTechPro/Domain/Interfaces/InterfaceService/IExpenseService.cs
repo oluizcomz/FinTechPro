@@ -11,6 +11,7 @@ namespace Domain.Interfaces.IExpenseService
     public interface IExpenseService
     {
         Task InsertExpense(Expenses expense);
-        Task UpdateExpense(Expenses expense);
+        Task UpdateExpense(Expenses expense, bool wasPaid);
+        Task<object> LoadsGraphics(string emailUser);
     }
 }

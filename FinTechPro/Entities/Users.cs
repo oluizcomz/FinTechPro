@@ -19,6 +19,6 @@ namespace Entities
         [ForeignKey("Accounts")]
         [Column(Order = 1)]
         public int IdAccount { get; set; }
-        public virtual Accounts Account { get; set; }
+        //public virtual Accounts Account { get; set; }
     }
 }

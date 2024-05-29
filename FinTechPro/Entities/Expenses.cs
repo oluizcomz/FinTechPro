@@ -23,7 +23,7 @@ namespace Entities
 
         public DateTime PaymentDate { get; set; }
 
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         public bool IsPaid { get; set; }
 
@@ -32,7 +32,7 @@ namespace Entities
         [ForeignKey("Categories")]
         [Column(Order = 1)]
         public int IdCategory { get; set; }
-        public virtual Categories Category { get; set; }
+        //public virtual required Categories Category { get; set; }
     
-}
+    }
 }
